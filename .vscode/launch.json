@@ -1,0 +1,14 @@
+{
+  "configurations": [
+    {
+      "type": "java",
+      "name": "Spring Boot-RoadcoApplication<roadco>",
+      "request": "launch",
+      "cwd": "${workspaceFolder}",
+      "console": "internalConsole",
+      "mainClass": "groupassign.roadco.RoadcoApplication",
+      "projectName": "roadco",
+      "args": ""
+    }
+  ]
+}
