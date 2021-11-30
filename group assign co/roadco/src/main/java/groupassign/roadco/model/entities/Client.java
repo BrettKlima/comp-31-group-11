@@ -18,7 +18,7 @@ public class Client {
     @Column(name="CLIENTID")
     private Integer clientId;
 
-    @Column(name="CLIENT")
+    @Column(name="CLIENTNAME")
     private String clientName;
 
     @Column(name="CLIENTCOMPANY")
@@ -30,12 +30,12 @@ public class Client {
     @Column(name="CLIENTADDRESS")
     private String clientAddress;
 
-    public Client() {
-        clientId = 0;
-        clientName = "";
-        clientCompany = "";
-        clientPhone = "";
-        clientAddress = "";
-    }
+  //  public Client() {
+   //     clientId = 0;
+   //     clientName = "";
+   //     clientCompany = "";
+   //     clientPhone = "";
+   //     clientAddress = "";
+   // }
 
 }

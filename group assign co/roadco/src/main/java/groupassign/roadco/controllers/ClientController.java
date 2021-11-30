@@ -20,7 +20,7 @@ public class ClientController {
 
     @GetMapping("/client")
     public String getClient(Model model) {
-        model.addAttribute("client", clientService.findClients());
+        model.addAttribute("client", clientService.findAll());
         return "client";
     }
 }
