@@ -7,7 +7,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.OneToMany;
+import javax.persistence.ManyToOne;
+
 import javax.persistence.Table;
 
 import lombok.Data;
@@ -36,7 +37,7 @@ public class Project {
     @Column(name="projEndDate")
     private String proj_end_date;
 
-    @OneToMany
-    @JoinColumn(name = "clientID", nullable = true)
-    private Client client;
+    @ManyToOne
+    @JoinColumn(name = "clientID")
+    private Client clients;
 }

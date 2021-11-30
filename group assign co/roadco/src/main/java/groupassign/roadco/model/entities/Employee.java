@@ -6,7 +6,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import lombok.Data;
@@ -32,14 +31,4 @@ public class Employee {
     @Column(name="empPhone")
     private String emp_phone;
 
-    @OneToMany(mappedBy = "schedule")
-    private Schedule schedule;
-
-    public Employee(){
-        employeeId = 0;
-        emp_name="";
-        emp_email="";
-        emp_role="";
-        emp_phone="";
-    }
 }
