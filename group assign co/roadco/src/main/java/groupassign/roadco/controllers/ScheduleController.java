@@ -20,7 +20,7 @@ public class ScheduleController {
 
     @GetMapping("/schedule")
     public String getAllSchedule(Model model){
-        //model.addAttribute("schedule",scheduleService.findAll());
+        model.addAttribute("schedule",scheduleService.findAll());
         return "schedule";
     }
 

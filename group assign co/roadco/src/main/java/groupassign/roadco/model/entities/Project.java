@@ -15,29 +15,29 @@ import lombok.Data;
 
 @Entity
 @Data
-@Table(name="project")
+@Table(name="PROJECT")
 public class Project {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="projectID")
+    @Column(name="PROJECTID")
     private Integer projectId;
 
-    @Column(name="projLocation")
+    @Column(name="PROJLOCATION")
     private String proj_location;
 
-    @Column(name="projEstCompleteDate")
+    @Column(name="PROJESTCOMPLETEDATE")
     private String proj_est_complete_date;
 
-    @Column(name="projEstCompleteCost")
+    @Column(name="PROJESTCOMPLETECOST")
     private String proj_est_complete_cost;
 
-    @Column(name="projStartDate")
+    @Column(name="PROJSTARTDATE")
     private String proj_start_date;
 
-    @Column(name="projEndDate")
+    @Column(name="PROJENDDATE")
     private String proj_end_date;
 
     @ManyToOne
-    @JoinColumn(name = "clientID")
+    @JoinColumn(name = "CLIENTID", nullable = true)
     private Client clients;
 }
