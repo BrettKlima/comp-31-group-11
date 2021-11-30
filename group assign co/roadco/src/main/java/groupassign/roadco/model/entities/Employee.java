@@ -12,23 +12,23 @@ import lombok.Data;
 
 @Entity
 @Data
-@Table(name="employee")
+@Table(name="EMPLOYEE")
 public class Employee {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="employeeID")
+    @Column(name="EMPLOYEEID")
     private Integer employeeId;
 
-    @Column(name="empName")
+    @Column(name="EMPNAME")
     private String emp_name;
 
-    @Column(name="empEmail")
+    @Column(name="EMPEMAIL")
     private String emp_email;
 
-    @Column(name="empRole")
+    @Column(name="EMPROLE")
     private String emp_role;
 
-    @Column(name="empPhone")
+    @Column(name="EMPPHONE")
     private String emp_phone;
 
 }
