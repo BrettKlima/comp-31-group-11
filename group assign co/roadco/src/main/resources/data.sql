@@ -1,4 +1,4 @@
-INSERT INTO client(clientID,clientName,clientCompany,clientPhone,clientAddress) VALUES
+INSERT INTO CLIENT(CLIENTID,CLIENTNAME,CLIENTCOMPANY,CLIENTPHONE,CLIENTADDRESS) VALUES
 (NULL, 'John', 'Big Company', '111-111-1111', '103 queen street');
 
 INSERT INTO employee(employeeID,empName,empEmail,empRole,empPhone) VALUES

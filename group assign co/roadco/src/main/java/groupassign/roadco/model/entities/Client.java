@@ -11,23 +11,31 @@ import lombok.Data;
 
 @Entity
 @Data
-@Table(name="client")
+@Table(name="CLIENT")
 public class Client {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="clientID")
+    @Column(name="CLIENTID")
     private Integer clientId;
 
-    @Column(name="clientName")
-    private String client_name;
+    @Column(name="CLIENT")
+    private String clientName;
 
-    @Column(name="clientCompany")
-    private String client_company;
+    @Column(name="CLIENTCOMPANY")
+    private String clientCompany;
 
-    @Column(name="clientPhone")
-    private String client_phone;
+    @Column(name="CLIENTPHONE")
+    private String clientPhone;
 
-    @Column(name="clientAddress")
-    private String client_address;
+    @Column(name="CLIENTADDRESS")
+    private String clientAddress;
+
+    public Client() {
+        clientId = 0;
+        clientName = "";
+        clientCompany = "";
+        clientPhone = "";
+        clientAddress = "";
+    }
 
 }

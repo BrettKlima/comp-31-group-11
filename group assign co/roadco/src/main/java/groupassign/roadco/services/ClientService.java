@@ -17,7 +17,8 @@ public class ClientService {
         this.clientRepo = clientRepo;
     }
 
-    public Iterable<Client> findAllClients() {
+    public Iterable<Client> findClients() 
+    {
         return clientRepo.findAll();
     }
 }
