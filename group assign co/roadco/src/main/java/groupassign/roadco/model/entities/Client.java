@@ -17,4 +17,17 @@ public class Client {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="clientID")
     private Integer clientId;
+
+    @Column(name="clientName")
+    private String client_name;
+
+    @Column(name="clientCompany")
+    private String client_company;
+
+    @Column(name="clientPhone")
+    private String client_phone;
+
+    @Column(name="clientAddress")
+    private String client_address;
+
 }
