@@ -18,8 +18,8 @@ public class ClientController {
         this.clientService = clientService;
     }
     @GetMapping("/client")
-    public String getAllClient(Model model){
-    
+    public String getAllClient(Model model) {
+        model.addAttribute("client", clientService.findAllClients());
         return "client";
     }
 }
