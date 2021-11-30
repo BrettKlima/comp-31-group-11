@@ -14,33 +14,33 @@ import lombok.Data;
 
 @Entity
 @Data
-@Table(name="schedule")
+@Table(name="SCHEDULE")
 public class Schedule {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="scheduleID")
+    @Column(name="SCHEDULEID")
     private Integer scheduleID;
 
-    @Column(name="schDay")
+    @Column(name="SCHDAY")
     private String sch_day;
 
-    @Column(name="schMonth")
+    @Column(name="SCHMONTH")
     private String sch_month;
 
-    @Column(name="schYear")
+    @Column(name="SCHYEAR")
     private String sch_year;
 
-    @Column(name="schStartTime")
+    @Column(name="SCHSTARTTIME")
     private String sch_start_time;
 
-    @Column(name="schEndTime")
+    @Column(name="SCHENDTIME")
     private String sch_end_time;
 
     @ManyToOne
-    @JoinColumn(name = "employeeID")
+    @JoinColumn(name = "EMPLOYEEID", nullable = true)
     private Employee employee;
 
     @ManyToOne
-    @JoinColumn(name = "projectID")
+    @JoinColumn(name = "PROJECTID", nullable = true)
     private Project project;
 }

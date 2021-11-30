@@ -18,7 +18,21 @@
 
     <table>
         <tr>
-            <th>Schedule</th> 
+            <th colspan="8">Schedule</th> 
+        </tr>
+        <tr>
+            <th>Schedule ID</th>
+            <th colspan="3">Date</th>
+            <th>Start Time</th>
+            <th>End Time</th>
+            <th>Employee</th>
+            <th>Project</th>
+        </tr>
+        <tr th:each="schedule:${schedule}">
+            <td th:text="${schedule.scheduleID}"></td>
+            <td th:text="${schedule.sch_day} + '/' + ${schedule.sch_month} + '/' + ${schedule.sch_year}"></td>
+            <td th:text="${schedule.sch_start_time}"></td>
+            <td th:text="${schedule.sch_end_time}"></td>
         </tr>
       
 
