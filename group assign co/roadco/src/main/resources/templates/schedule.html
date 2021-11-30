@@ -8,7 +8,9 @@
 
     <style>
         table,td,th {border: black solid}
-        table{border-collapse: collapse; margin: auto;}
+        table.border {border: black solid; border-collapse: collapse; margin: auto;}
+        table.border td {border: black solid thin}
+        table.noborder td {border: none}
     </style>
   
 </head>
@@ -16,7 +18,7 @@
     <h1>Schedule</h1>
     <div th:insert="fragments/frags :: navbar" class="navbar"></div>
 
-    <table>
+    <table class="border">
         <tr>
             <th colspan="8">Schedule</th> 
         </tr>
@@ -30,11 +32,25 @@
         </tr>
         <tr th:each="schedule:${schedule}">
             <td th:text="${schedule.scheduleID}"></td>
-            <td th:text="${schedule.sch_day} + '/' + ${schedule.sch_month} + '/' + ${schedule.sch_year}"></td>
+            <td colspan="3" th:text="${schedule.sch_day} + '/' + ${schedule.sch_month} + '/' + ${schedule.sch_year}"></td>
             <td th:text="${schedule.sch_start_time}"></td>
             <td th:text="${schedule.sch_end_time}"></td>
+            <td>
+                <table class='noborder'>
+                    <tr th:each="schedule:${schedule.employee}">
+                        <td th:text="${schedule.emp_name}"></td>
+                    </tr>
+                </table>
+            </td>
+            <td>
+                <table class='noborder'>
+                    <tr th:each="schedule:${schedule.project}">
+                        <td th:text="${schedule.projectId}"></td>
+                    </tr>
+                </table>
+            </td>
         </tr>
-      
+        
 
     </table>
 </body>
