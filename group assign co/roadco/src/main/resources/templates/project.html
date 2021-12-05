@@ -9,5 +9,21 @@
 <body>
     <h1>Project Page</h1>
     <div th:insert="fragments/frags :: navbar" class="navbar"></div>
+
+
+    <table class="projTable">
+        <tr>
+            <th colspan="2">Project</th>
+            <tr th:each="project:${project}">
+                <td th:text="${project.projectId}"></td>
+                <td th:text="${project.proj_Location}"></td>
+                <td th:text="${project.proj_est_complete_date}"></td>
+                <td th:text="${project.proj_est_complete_cost}"></td>
+                <td th:text="${project.proj_start_date}"></td>
+                <td th:text="${project.proj_end_date}"></td>
+             <!--   <td th:text="${project.clients}"></td> -->
+            </tr>
+        </tr>
+    </table>
 </body>
 </html>

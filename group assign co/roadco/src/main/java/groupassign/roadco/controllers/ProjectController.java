@@ -18,8 +18,9 @@ public class ProjectController {
         this.projectService = projectService;
     }
     @GetMapping("/project")
-    public String getAllProjecy(Model model){
+    public String getAllProject(Model model){
         
+        model.addAttribute("project", projectService.findAll());
         return "project";
     }
 }
