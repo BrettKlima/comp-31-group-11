@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import groupassign.roadco.services.ProjectService;
 
@@ -18,9 +19,27 @@ public class ProjectController {
         this.projectService = projectService;
     }
     @GetMapping("/project")
-    public String getAllProject(Model model){
+    public String getProject(
+        @RequestParam(required=false) String projectLocation,    
+        Model model){
+            
+        boolean projectIdInvalid =
+            projectLocation == null ||
+            projectLocation.isEmpty();
+
+       
         
-        model.addAttribute("project", projectService.findAll());
+        if (projectIdInvalid)
+        {   model.addAttribute("project", projectService.findAll());
+        }
+        else
+        {  
+            model.addAttribute("project", projectService.findByProjectLocation(projectLocation) );
+        }
+        
+        
         return "project";
     }
+
+    
 }

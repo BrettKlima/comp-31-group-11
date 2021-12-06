@@ -23,4 +23,14 @@ public class ProjectService {
         return projRepo.findAll();
     }
     
+
+    public Iterable<Project> findByProjectID(int projectId)
+    {
+        return projRepo.findByProjectId(projectId);
+    }
+
+    public Iterable<Project> findByProjectLocation(String projectLocation)
+    {
+        return projRepo.findByProjLocation(projectLocation);
+    }
 }

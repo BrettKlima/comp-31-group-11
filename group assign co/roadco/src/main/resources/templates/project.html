@@ -11,18 +11,37 @@
     <div th:insert="fragments/frags :: navbar" class="navbar"></div>
 
 
+
+    <form action="/project" class="center">
+        <label>Find Project By Location</label>
+        <br>
+        <label for="ProjectIdString">Enter Project Location</label>
+        <input type="text" name="projectLocation", id="projectLocation">
+        <br>
+        <input type="submit" value="Send">
+    </form>
+
     <table class="projTable">
         <tr>
             <th colspan="2">Project</th>
-            <tr th:each="project:${project}">
-                <td th:text="${project.projectId}"></td>
-                <td th:text="${project.proj_Location}"></td>
-                <td th:text="${project.proj_est_complete_date}"></td>
-                <td th:text="${project.proj_est_complete_cost}"></td>
-                <td th:text="${project.proj_start_date}"></td>
-                <td th:text="${project.proj_end_date}"></td>
-             <!--   <td th:text="${project.clients}"></td> -->
-            </tr>
+                <tr>
+                    <th>Project ID</th>
+                    <th>Project Location</th>
+                    <th>Project Estimated Completed Date</th>
+                    <th>Project Estimated Completed Cost</th>
+                    <th>Project Start Date</th>
+                    <th>Project End Date</th>
+
+                </tr>
+                <tr th:each="project:${project}">
+                    <td th:text="${project.projectId}"></td>
+                    <td th:text="${project.projLocation}"></td>
+                    <td th:text="${project.proj_est_complete_date}"></td>
+                    <td th:text="${project.proj_est_complete_cost}"></td>
+                    <td th:text="${project.proj_start_date}"></td>
+                    <td th:text="${project.proj_end_date}"></td>
+                 <!--   <td th:text="${project.clients}"></td> -->
+              </tr>
         </tr>
     </table>
 </body>

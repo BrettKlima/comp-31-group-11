@@ -23,7 +23,7 @@ public class Project {
     private Integer projectId;
 
     @Column(name="PROJLOCATION")
-    private String proj_Location;
+    private String projLocation;
 
     @Column(name="PROJESTCOMPLETEDATE")
     private String proj_est_complete_date;
