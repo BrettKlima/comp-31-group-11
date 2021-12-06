@@ -7,10 +7,9 @@
     <title>Document</title>
 
     <style>
-        table,td,th {border: black solid}
         table.border {border: black solid; border-collapse: collapse; margin: auto;}
         table.border td {border: black solid thin}
-        table.noborder td {border: none}
+        table.noborder td {border: none; border-collapse:collapse}
     </style>
   
 </head>
@@ -38,7 +37,7 @@
             <td>
                 <table class='noborder'>
                     <tr th:each="schedule:${schedule.employee}">
-                        <td th:text="${schedule.emp_name}"></td>
+                        <td border-collapse:separate th:text="${schedule.emp_name}"></td>
                     </tr>
                 </table>
             </td>
