@@ -20,16 +20,23 @@ public class ProjectController {
     }
     @GetMapping("/project")
     public String getProject(
-        @RequestParam(required=false) String projectLocation,    
+
+        @RequestParam(required=false) String projectLocation,
+        @RequestParam(required=false) String projectIdString,    
         Model model){
             
-        boolean projectIdInvalid =
+            int projectId;
+
+
+        boolean projectLocationInvalid =
             projectLocation == null ||
             projectLocation.isEmpty();
 
-       
+        boolean projectIdInvalid =
+            projectIdString == null ||
+            projectIdString.isEmpty();
         
-        if (projectIdInvalid)
+        if (projectLocationInvalid)
         {   model.addAttribute("project", projectService.findAll());
         }
         else
@@ -37,6 +44,14 @@ public class ProjectController {
             model.addAttribute("project", projectService.findByProjectLocation(projectLocation) );
         }
         
+        if (projectIdInvalid)
+        {   model.addAttribute("project", projectService.findAll());
+        }
+        else
+        {  
+            projectId = Integer.parseInt(projectIdString);
+            model.addAttribute("project", projectService.findByProjectID(projectId) );
+        }
         
         return "project";
     }
