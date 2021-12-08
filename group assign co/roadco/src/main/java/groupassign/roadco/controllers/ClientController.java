@@ -4,7 +4,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+
+import groupassign.roadco.model.entities.Client;
 
 //import org.springframework.web.bind.annotation.ModelAttribute;
 //import org.springframework.web.bind.annotation.PostMapping;
@@ -73,8 +76,20 @@ public class ClientController {
         return "client";
     }
 
- //   @PostMapping("/addClient")
- //   public String newClient(@ModelAttribute)
+     @GetMapping("/addclient")
+    public String newClient(Model model) {
+        model.addAttribute("client2", clientService.findAll());
+        return "addclient";
+    }
+    @PostMapping("/addClients")
+    public String addClient(Model model, Client client)
+    {
+        model.addAttribute("client", clientService.saveClient(client));
+        return "addClient";
+    }
+
+
+
  //submitting post data from a form, add an object to the model, before you go to the page that had the form
  //tag that identified a backing object in form, in input elements use th:field tag. 
  //that ties inpuit code to backing object. When submit that

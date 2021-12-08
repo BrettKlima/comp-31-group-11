@@ -9,7 +9,9 @@
 <body>
     <H1>Client Page</H1>
     <div th:insert="fragments/frags :: navbar" class="navbar"></div>
-
+    <div class="subNavBar">
+        <a href="./addClient">Add A Client</a>
+    </div>
     <div>
         <form action="/findByCompany" class="center">
           <h3>Find by client company</h3>

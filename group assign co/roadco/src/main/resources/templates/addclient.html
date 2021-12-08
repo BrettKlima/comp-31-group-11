@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Add A Client</h1>
+    <div th:insert="fragments/frags :: navbar" class="navbar"></div>
+
+    <form th:action="@{/addClient}" th:object="${client}" method="post">
+      <label>Client Name</label>
+      <input type="text" th:field="*{clientName}" placeholder="Client Name" />
+      <input
+        type="text"
+        th:field="*{clientCompany}"
+        placeholder="Client Company"
+      />
+      <input type="text" th:field="*{clientPhone}" placeholder="Client Phone" />
+      <input
+        type="text"
+        th:field="*{clientAddress}"
+        placeholder="Client Address"
+      />
+    </form>
+  </body>
+</html>
