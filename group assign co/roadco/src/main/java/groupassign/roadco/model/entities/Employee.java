@@ -17,18 +17,22 @@ public class Employee {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="EMPLOYEEID")
-    private Integer employeeId;
+    public Integer employeeId;
 
-    @Column(name="EMPNAME")
-    private String emp_name;
+    @Column(name="EMPLOYEEFIRSTNAME")
+    public String employeeFirstName;
 
-    @Column(name="EMPEMAIL")
-    private String emp_email;
+    @Column(name="EMPLOYEELASTNAME")
+    public String employeeLastName;
 
-    @Column(name="EMPROLE")
-    private String emp_role;
+    @Column(name="EMPLOYEEEMAIL")
+    public String employeeEmail;
 
-    @Column(name="EMPPHONE")
-    private String emp_phone;
+    @Column(name="EMPLOYEEROLE")
+    public String employeeRole;
+
+    @Column(name="EMPLOYEEPHONE")
+    public String employeePhone;
+
 
 }
