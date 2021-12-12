@@ -37,8 +37,10 @@ public class ClientService {
         return clientRepo.findByClientCompanyAndClientAddress(clientCompany, clientAddress);
     } 
 
-    public Client saveClient (Client client) {
-        return clientRepo.save(client);
+
+    public void addClient(Client newClient) {
+        
+        clientRepo.save(newClient);
     }
 
 }

@@ -4,13 +4,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" th:href="@{/css/style.css}">
     <title>Document</title>
 </head>
 <body>
     <H1>Client Page</H1>
-    <div th:insert="fragments/frags :: navbar" class="navbar"></div>
+    <div th:insert="fragments/frags :: navbar"></div>
     <div class="subNavBar">
-        <a href="./addClient">Add A Client</a>
+        <a href="/addclient">Add A Client</a>
     </div>
     <div>
         <form action="/findByCompany" class="center">
