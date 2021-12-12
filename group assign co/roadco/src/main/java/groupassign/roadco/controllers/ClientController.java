@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -78,14 +79,19 @@ public class ClientController {
 
      @GetMapping("/addclient")
     public String newClient(Model model) {
-        model.addAttribute("client2", clientService.findAll());
+        Client client = new Client();
+        model.addAttribute("client", client);
         return "addclient";
     }
-    @PostMapping("/addClients")
-    public String addClient(Model model, Client client)
+    @PostMapping("/addclient")
+    public String addClient(Model model, @ModelAttribute Client newClient)
     {
-        model.addAttribute("client", clientService.saveClient(client));
-        return "addClient";
+        clientService.addClient(newClient);
+        
+        model.addAttribute("client", new Client());
+        model.addAttribute("clients", clientService.findAll());
+        
+        return ("addclient");
     }
 
 
