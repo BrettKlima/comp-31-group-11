@@ -8,13 +8,15 @@
     <title>Document</title>
 </head>
 <body>
-    <H1>Client Page</H1>
-    <div th:insert="fragments/frags :: navbar"></div>
-    <div class="subNavBar">
-        <a href="/addclient">Add A Client</a>
+    <div class="banner">
+        <H1>Client Lookup</H1>
     </div>
-    <div>
-        <form action="/findByCompany" class="center">
+    
+    <div th:insert="fragments/frags :: navbar"></div>
+    <div class="contentContainer">
+    <div class="query">
+
+        <form action="/findByCompany" class="queryItem">
           <h3>Find by client company</h3>
           <label for="clientCompany">Company Name</label>
           <input type="text" name="clientCompany" , id="clientCompany" />
@@ -22,15 +24,16 @@
           <input type="submit" value="Send" />
         </form>
 
-        <form action="/findByClientName" class="center">
+        <form action="/findByClientName" class="queryItem">
           <h3>Find by client name</h3>
           <label for="clientName">Client Name</label>
           <input type="text" name="clientName" , id="clientName" />
           <br />
           <input type="submit" value="Send" />
         </form>
+ 
 
-        <form action="/findByCompanyAndAddress" class="center">
+        <form action="/findByCompanyAndAddress" class="queryItem">
           <h3>Find by client company</h3>
           <label for="clientCompany">Company Name</label>
           <input type="text" name="clientCompany" , id="clientCompany" />
@@ -39,11 +42,17 @@
           <br />
           <input type="submit" value="Send" />
         </form>
+
     </div>
 
+    <div>
     <table class="clientTable">
         <tr>
-            <th colspan="2">Clients</th>
+            <th>Client ID</th>
+            <th>Client Name</th>
+            <th>Client Company</th>
+            <th>Client Phone</th>
+            <th>Client Address</th>
             <tr th:each="clients:${client}">
                <td th:text="${clients.clientId}"></td> 
                 <td th:text="${clients.clientName}"></td>
@@ -53,5 +62,10 @@
             </tr>
         </tr>
     </table>
+    </div>
+    <div class="nonNavBarButton">
+        <a class="navlink" href="/addclient">Add A Client</a>
+    </div>
+    </div>
 </body>
 </html>
