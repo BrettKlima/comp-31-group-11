@@ -23,4 +23,7 @@ public interface EmployeeRepo extends CrudRepository<Employee,Integer>{
 
     //Find by lastName that begins with search characters
     List<Employee> findByEmployeeLastNameStartingWithIgnoreCase(String searchLastName);
+
+    //For schedule Find employee By First Name
+    Employee findByEmployeeFirstNameIgnoreCase(String employeeFirstName);
 }
