@@ -1,0 +1,128 @@
+body {
+  background-color: black;
+  color: white;
+}
+.banner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+h1 {
+  font-size: 3em;
+  display: flex;
+}
+h2 {
+  display: flex;
+  font-size: 1.8em;
+}
+.nav {
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  padding: 1.5em;
+  display: flex;
+  justify-content: center;
+  border-top-width: 0.3em;
+  border-top-color: darkorange;
+  border-top-style: solid;
+}
+
+.navlink {
+  text-decoration: none;
+  background-color: darkorange;
+  padding: 1em;
+  margin: 0.2em;
+  align-content: center;
+  display: flex;
+  color: white;
+  font-weight: bolder;
+  font-size: 1.5em;
+}
+
+.contentContainer {
+  margin-top: 0.5em;
+  border-left-width: 0.3em;
+  border-left-color: darkorange;
+  border-left-style: solid;
+  border-right-width: 0.3em;
+  border-right-color: darkorange;
+  border-right-style: solid;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  height: 50%;
+}
+
+.mainImage {
+  display: flex;
+  justify-content: center;
+}
+
+.navlinkfrags {
+  text-decoration: none;
+  background-color: darkorange;
+  padding: 1em;
+  margin: 0.2em;
+  color: white;
+  font-weight: bolder;
+  font-size: 1.5em;
+}
+
+.navfrags {
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  padding: 1.5em;
+  display: flex;
+  justify-content: center;
+  border-top-width: 0.3em;
+  border-top-color: darkorange;
+  border-top-style: solid;
+}
+
+.nonNavBarButton {
+  display: flex;
+  margin-top: 5%;
+  margin-left: 6%;
+}
+
+.query {
+  display: flex;
+  flex-direction: row;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 5%;
+  justify-content: center;
+  width: 90%;
+  border-bottom-width: 0.3em;
+  border-bottom-color: darkorange;
+  border-bottom-style: solid;
+}
+
+.queryItem {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 40%;
+  padding-bottom: 5%;
+}
+
+input[type="text"] {
+  width: 90%;
+}
+
+input[type="submit"] {
+  width: 50%;
+}
+
+.clientTable,
+tr,
+th,
+td {
+  border: 0.2em solid darkorange;
+  border-collapse: collapse;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5%;
+  font-size: 1.2em;
+}

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" th:href="@{/css/style.css}" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="banner">
+      <h1>Add A Client</h1>
+    </div>
+    <div class="contentContainer">
+      <div class="query">
+        <form
+          action="#"
+          th:action="@{/addclient}"
+          th:object="${client}"
+          method="POST"
+          class="queryItem"
+        >
+          <label>Client Name</label>
+          <input
+            type="text"
+            th:field="*{clientName}"
+            placeholder="Client Name"
+          />
+          <label>Client company</label>
+          <input
+            type="text"
+            th:field="*{clientCompany}"
+            placeholder="Client Company"
+          />
+          <label>Client phone</label>
+          <input
+            type="text"
+            th:field="*{clientPhone}"
+            placeholder="Client Phone"
+          />
+          <label>Client address</label>
+          <input
+            type="text"
+            th:field="*{clientAddress}"
+            placeholder="Client Address"
+          />
+          <input type="submit" value="Add Client" />
+        </form>
+      </div>
+      <div class="nonNavBarButton">
+        <a class="navlink" href="/client">Back to Client Page</a>
+      </div>
+    </div>
+  </body>
+</html>
