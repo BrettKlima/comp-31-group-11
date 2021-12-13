@@ -79,3 +79,50 @@ h2 {
   border-top-color: darkorange;
   border-top-style: solid;
 }
+
+.nonNavBarButton {
+  display: flex;
+  margin-top: 5%;
+  margin-left: 6%;
+}
+
+.query {
+  display: flex;
+  flex-direction: row;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 5%;
+  justify-content: center;
+  width: 90%;
+  border-bottom-width: 0.3em;
+  border-bottom-color: darkorange;
+  border-bottom-style: solid;
+}
+
+.queryItem {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 40%;
+  padding-bottom: 5%;
+}
+
+input[type="text"] {
+  width: 90%;
+}
+
+input[type="submit"] {
+  width: 50%;
+}
+
+.clientTable,
+tr,
+th,
+td {
+  border: 0.2em solid darkorange;
+  border-collapse: collapse;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5%;
+  font-size: 1.2em;
+}
