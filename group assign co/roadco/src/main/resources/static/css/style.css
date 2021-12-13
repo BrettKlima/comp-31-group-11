@@ -112,7 +112,7 @@ input[type="text"] {
 }
 
 input[type="submit"] {
-  width: 50%;
+  width: 100%;
 }
 
 .clientTable,
@@ -125,4 +125,37 @@ td {
   margin-right: auto;
   margin-top: 5%;
   font-size: 1.2em;
+}
+
+.scheduleTable,
+tr,
+th,
+td {
+  border: 0.2em solid darkorange;
+  border-collapse: collapse;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5%;
+  font-size: 1.03em;
+}
+form.center
+{
+    border:solid darkorange;
+    padding: 20px;
+    width:15%;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color:darkorange;
+    float:left;
+}
+form.allSchedule
+{
+    border:solid darkorange;
+    padding: 0px;
+    padding-top: 0px;
+    padding-right: -2px;
+    width: 10%;
+    margin:auto;
+    justify-content: center;
 }

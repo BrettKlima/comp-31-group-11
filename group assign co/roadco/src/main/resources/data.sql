@@ -10,7 +10,7 @@ INSERT INTO EMPLOYEE(EMPLOYEEID,EMPLOYEEFIRSTNAME,EMPLOYEELASTNAME,EMPLOYEEEMAIL
 (NULL, 'Bob', 'Mackenzie'  , 'mackdaddy@gmail.com'    , 'Labourer' , '555-555-5555'),
 (NULL, 'Dale', 'Doback'    , 'dale@gmail.com'         , 'Operator' , '666-666-6666'),
 (NULL, 'Brennan', 'Huff'   , 'huffer@gmail.com'       , 'Operator' , '777-777-7777'),
-(NULL, 'Jared', 'Subway'   , 'sub@gmail.com'          , 'Operator' , '888-888-8888'),
+(NULL, 'Jared', 'Macdonald'   , 'sub@gmail.com'          , 'Operator' , '888-888-8888'),
 (NULL, 'Jillion', 'Choi'   , 'jilchoi@gmail.com'      , 'Foreman'  , '999-999-9999'),
 (NULL, 'Kayden', 'Houston' , 'houstonshow@gmail.com'  , 'Foreman'  , '111-112-1010'),
 (NULL, 'Alfredo', 'Parmesan', 'marinara@gmail.com'    , 'Foreman'  , '888-888-9999');
