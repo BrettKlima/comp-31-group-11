@@ -4,33 +4,42 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" th:href="@{/css/style.css}">
     <title>Document</title>
 </head>
 <body>
-    <h1>Project Page</h1>
+
+    <div class="banner">
+        <h1>Project Page</h1>
+    </div>
+
     <div th:insert="fragments/frags :: navbar" class="navbar"></div>
+    <div class="contentContainer">
+        <div class="query">
 
 
+        <form action="/project" class="center">
+            <label>Find Project By ID</label>
+            <br>
+            <label for="ProjectIdString">Enter Project ID</label>
+            <input type="text" name="projectIdString", id="projectIdString">
+            <br>
+            <input type="submit" value="Send">
+        </form>
 
-    <form action="/project" class="center">
-        <label>Find Project By ID</label>
-        <br>
-        <label for="ProjectIdString">Enter Project ID</label>
-        <input type="text" name="projectIdString", id="projectIdString">
-        <br>
-        <input type="submit" value="Send">
-    </form>
+        <form action="/project" class="center">
+            <label>Find Project By Location</label>
+            <br>
+            <label for="ProjectLocation">Enter Project Location</label>
+            <input type="text" name="projectLocation", id="projectLocation">
+            <br>
+            <input type="submit" value="Send">
+        </form>
 
-    <form action="/project" class="center">
-        <label>Find Project By Location</label>
-        <br>
-        <label for="ProjectLocation">Enter Project Location</label>
-        <input type="text" name="projectLocation", id="projectLocation">
-        <br>
-        <input type="submit" value="Send">
-    </form>
+        </div>
 
-    <table class="projTable">
+    <div>
+    <table class="clientTable">
         <tr>
             <th colspan="2">Project</th>
                 <tr>
@@ -49,9 +58,11 @@
                     <td th:text="${project.proj_est_complete_cost}"></td>
                     <td th:text="${project.proj_start_date}"></td>
                     <td th:text="${project.proj_end_date}"></td>
-                 <!--   <td th:text="${project.clients}"></td> -->
+                 
               </tr>
         </tr>
     </table>
+    </div>
+    </div>
 </body>
 </html>
