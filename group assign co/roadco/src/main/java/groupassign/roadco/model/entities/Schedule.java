@@ -22,19 +22,19 @@ public class Schedule {
     private Integer scheduleID;
 
     @Column(name="SCHDAY")
-    private String sch_day;
+    private String schDay;
 
     @Column(name="SCHMONTH")
-    private String sch_month;
+    private String schMonth;
 
     @Column(name="SCHYEAR")
-    private String sch_year;
+    private String schYear;
 
     @Column(name="SCHSTARTTIME")
-    private String sch_start_time;
+    private String schStartTime;
 
     @Column(name="SCHENDTIME")
-    private String sch_end_time;
+    private String schEndTime;
 
     @ManyToOne
     @JoinColumn(name = "EMPLOYEEID", nullable = true)

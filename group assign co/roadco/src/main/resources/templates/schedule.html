@@ -7,18 +7,52 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 
+    
     <style>
         table.border {border: black solid; border-collapse: collapse; margin: auto;}
         table.border td {border: black solid thin}
-        table.noborder td {border: none; border-collapse:collapse}
+        table.noborder td {border: none; border-collapse:collapse} 
     </style>
   
 </head>
 <body>
-    <h1>Schedule</h1>
+    <div class="banner">
+        <h1>Schedule</h1>
+    </div>
     <div th:insert="fragments/frags :: navbar" class="navbar"></div>
 
-    <table class="border">
+    <form action="/schedule" class="allSchedule">
+        <input type="submit" value="Find All" />
+    </form>
+    <div style="display:flex"> 
+ 
+    <form action="/scheduleDayMonth" class="center">
+        <h3>Find Schedule By Day and Month</h3>
+        <label for="schDay">Day</label>
+        <input type="text" name="schDay" id="schDay"  placeholder="Day(01)"/>
+        <br />
+        <label for="schMonth">Month</label>
+        <input type="text" name="schMonth"  id="schMonth" placeholder="Month(05)"/>
+        <br />
+        <input type="submit" value="Search" />
+      </form>
+
+      <form action="/scheduleEmpName" class="center">
+        <h3>Find Schedule Employee First Name</h3>
+        <label for="firstName">First Name(Not Case Sensitive)</label>
+        <input type="text" name="firstName" id="firstName"  placeholder="First Name"/>
+        <br />
+        <input type="submit" value="Search" />
+      </form>
+
+      <form action="/scheduleEmpRole" class="center">
+        <h3>Order By Start Time</h3>
+        <br />
+        <input type="submit" value="Order" />
+      </form>
+
+</div>
+    <table class="scheduleTable">
         <tr>
             <th colspan="8">Schedule</th> 
         </tr>
@@ -28,24 +62,24 @@
             <th>Start Time</th>
             <th>End Time</th>
             <th>Employee</th>
-            <th>Project</th>
+            <th>Role</th>
         </tr>
         <tr th:each="schedule:${schedule}">
             <td th:text="${schedule.scheduleID}"></td>
-            <td colspan="3" th:text="${schedule.sch_day} + '/' + ${schedule.sch_month} + '/' + ${schedule.sch_year}"></td>
-            <td th:text="${schedule.sch_start_time}"></td>
-            <td th:text="${schedule.sch_end_time}"></td>
+            <td colspan="3" th:text="${schedule.schDay} + '/' + ${schedule.schMonth} + '/' + ${schedule.schYear}"></td>
+            <td th:text="${schedule.schStartTime}"></td>
+            <td th:text="${schedule.schEndTime}"></td>
             <td>
                 <table class='noborder'>
                     <tr th:each="schedule:${schedule.employee}">
-                       <!--<td border-collapse:separate th:text="${schedule.EMPLOYEEFIRSTNAME}"></td> -->
+                       <td border-collapse:separate th:text="${schedule.employeeFirstName} + ' ' + ${schedule.employeeLastName} "></td> 
                     </tr>
                 </table>
             </td>
             <td>
                 <table class='noborder'>
-                    <tr th:each="schedule:${schedule.project}">
-                        <td th:text="${schedule.projectId}"></td>
+                    <tr th:each="schedule:${schedule.employee}">
+                        <td th:text="${schedule.employeeRole}"></td>
                     </tr>
                 </table>
             </td>
