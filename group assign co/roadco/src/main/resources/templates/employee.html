@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" th:href="@{/css/style.css}" />
     <title>Employee</title>
 
     <style>
@@ -18,22 +19,23 @@
 </head>
 
 <body>
-
+    <div class="banner">
     <h1 class="heading">Employee Page</h1>
+    </div>
     <div th:insert="fragments/frags :: navbar" class="navbar">
     </div>
-    <div class="center">
-      
+    <div class="contentContainer">
+      <div class="banner">
+          <h1>Show Employees</h1>
+      </div>
+      <div class="query">
         <form action="searchAllEmployees" method="POST" >
-            <h1>Show Employees</h1>
-            <h2>
-                Search by Last Name
-            </h2>
+            <br>
+            <br>
             <button>Show All Employees</button>
-            <br>
-            <br>
+            
         </form>
-        <form action="searchEmployeeLastNameChar" method="POST">
+        <form action="searchEmployeeLastNameChar" method="POST" class="queryItem">
                 <label for="lastNameChar">Search by First letter in Last Name (case sensitive)</label>
                 <br>
                 <input type="text" name="lastNameChar" id="lastNameChar" size="1" maxlength="1">
@@ -42,7 +44,7 @@
                 <br>
                 <br>
         </form>
-        <form action="searchEmployeeLastName" method="POST">
+        <form action="searchEmployeeLastName" method="POST" class="queryItem">
                 <label for="lastNameString">Search by Last Name Starting with sequence of letters (not case sensitive)</label>
                 <br>
                 <input type="text" name="lastNameString" id="lastNameString" size="30" maxlength="30">
@@ -50,10 +52,10 @@
                 <button>Show Employee containing phrase</button>
                 <br>
         </form>
-    
     </div>
     
-    <table class="border">
+    
+    <table class="clientTable">
         <tr>
             <th colspan="2">Employees</th>
             <th>Emails</th>
@@ -66,7 +68,7 @@
             </tr>
         </tr>
     </table>
-
+    </div>
 
 </body>
 </html>
