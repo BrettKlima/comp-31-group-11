@@ -8,3 +8,6 @@ development process
 4 - publish branch to remote
 5 - commit your changes to the branch as you finish a task
 6 - create pull request for it to be merged
+
+
+test release
